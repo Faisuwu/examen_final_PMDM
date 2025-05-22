@@ -1,3 +1,6 @@
+import 'package:examen_final_maqueda/screens/home_screen.dart';
+import 'package:examen_final_maqueda/screens/login_screen.dart';
+import 'package:examen_final_maqueda/services/storage_service.dart';
 import 'package:flutter/material.dart';
 
 
@@ -6,7 +9,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  //final StorageService _storage = StorageService();
+  final StorageService _storage = StorageService();
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +17,16 @@ class MyApp extends StatelessWidget {
       title: 'Plats App',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: FutureBuilder(
-        //future: _storage.getCredentials(),
+        future: _storage.getCredentials(),
         builder: (ctx, snapshot) {
           if (snapshot.connectionState != ConnectionState.done) {
             return const Scaffold(body: Center(child: CircularProgressIndicator()));
           }
           final creds = snapshot.data as Map<String,String>?;
           if (creds != null) {
-            //return HomeScreen();
+            return HomeScreen();
           }
-          //return LoginScreen();
+          return LoginScreen();
         },
       ),
     );

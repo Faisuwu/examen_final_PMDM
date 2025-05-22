@@ -9,7 +9,7 @@ class Plat {
   String nom;
   String descripcio;
   String foto;
-  String disponible;
+  bool disponible;
   String tipus;
 
   Plat({
