@@ -1,9 +1,13 @@
+import 'package:examen_final_maqueda/widgets/plat_tile.dart';
 import 'package:flutter/material.dart';
 import '../models/plat.dart';
+import '../services/api_service.dart';
 
 class DetailScreen extends StatelessWidget {
   final Plat plat;
+
   const DetailScreen({ required this.plat });
+
 
   @override
   Widget build(BuildContext c) => Scaffold(
@@ -13,14 +17,9 @@ class DetailScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.network(
-            (plat.foto != null && plat.foto!.isNotEmpty)
-                ? plat.foto!
-                : 'https://upload.wikimedia.org/wikipedia/commons/e/e0/PlaceholderLC.png',
-            width: 200,
-            height: 200,
-            fit: BoxFit.cover,
-          ),
+          ListView.builder(itemBuilder: (_, i) => PlatTile(
+            plat: plat,
+          ),),
           const SizedBox(height: 16),
           Text('Id: ${plat.id}'),
           Text('Descripció: ${plat.descripcio}'),
@@ -35,10 +34,10 @@ class DetailScreen extends StatelessWidget {
           const Spacer(),
           Center(
             child: ElevatedButton.icon(
-              icon: const Icon(Icons.map),
+              icon: const Icon(Icons.delete),
               label: const Text('Borrar plat'),
               onPressed: () {
-                //Implementar eliminarplat
+                //IMPLEMENTAR BORRAR
               },
             ),
           ),

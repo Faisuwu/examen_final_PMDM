@@ -22,7 +22,9 @@ class _LoginScreenState extends State<LoginScreen> {
     final ok = await _auth.login(_userCtrl.text, _passCtrl.text);
     setState(() => _loading = false);
     if (ok) {
-      await _storage.saveCredentials(_userCtrl.text, _passCtrl.text);
+      if (guardarCreedencials){
+        await _storage.saveCredentials(_userCtrl.text, _passCtrl.text);
+      }
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen()));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Credencials incorrectes')));

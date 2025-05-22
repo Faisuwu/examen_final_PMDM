@@ -14,5 +14,10 @@ class ApiService {
       throw Exception('Error al carregar plats');
     }
   }
-  //Implementar BorrarPlat
+  void borrarPlat(Plat plat) async{
+    //IMPLEMENTAR BORRARPLAT
+  }
+  void afegirPlat(Plat plat) async{
+    //IMPLEMENTAR AFEGIRPLAT
+  }
 }

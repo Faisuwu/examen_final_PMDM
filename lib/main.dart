@@ -1,5 +1,6 @@
 import 'package:examen_final_maqueda/screens/home_screen.dart';
 import 'package:examen_final_maqueda/screens/login_screen.dart';
+import 'package:examen_final_maqueda/screens/newPlat_screen.dart';
 import 'package:examen_final_maqueda/services/storage_service.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +30,12 @@ class MyApp extends StatelessWidget {
           return LoginScreen();
         },
       ),
+      routes: {
+        'login': (_) => LoginScreen(),
+        'home': (_) => HomeScreen(),
+        'afegir': (_) => NewPlat()
+      },
+      
     );
   }
 }

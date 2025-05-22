@@ -3,8 +3,7 @@ import '../models/plat.dart';
 
 class PlatTile extends StatelessWidget {
   final Plat plat;
-  final VoidCallback onTap;
-  const PlatTile({ required this.plat, required this.onTap });
+  const PlatTile({ required this.plat});
 
   @override
   Widget build(BuildContext c) => ListTile(
@@ -16,7 +15,5 @@ class PlatTile extends StatelessWidget {
       height: 50,
       fit: BoxFit.cover,
     ),
-    title: Text(plat.nom),
-    onTap: onTap,
   );
 }

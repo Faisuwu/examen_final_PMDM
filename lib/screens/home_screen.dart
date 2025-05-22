@@ -1,3 +1,4 @@
+import 'package:examen_final_maqueda/widgets/plat_nom.dart';
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 import '../services/storage_service.dart';
@@ -46,13 +47,19 @@ class _HomeScreenState extends State<HomeScreen> {
         final plats = snap.data!;
         return ListView.builder(
           itemCount: plats.length,
-          itemBuilder: (_, i) => PlatTile(
+          itemBuilder: (_, i) => PlatNom(
             plat: plats[i],
             onTap: () => Navigator.push(context, MaterialPageRoute(
               builder: (_) => DetailScreen(plat: plats[i]),
             )),
           ),
         );
+      },
+    ),
+    floatingActionButton: FloatingActionButton(
+      child: Icon(Icons.add),
+      onPressed: () {
+        Navigator.of(context).pushNamed('afegir');
       },
     ),
   );
