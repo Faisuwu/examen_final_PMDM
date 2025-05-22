@@ -8,7 +8,7 @@ class DetailScreen extends StatelessWidget {
 
   const DetailScreen({ required this.plat });
 
-
+  //DetailScreen amb tots els camps del plat mostrats a l'usuari
   @override
   Widget build(BuildContext c) => Scaffold(
     appBar: AppBar(title: Text(plat.nom)),
@@ -37,7 +37,7 @@ class DetailScreen extends StatelessWidget {
               icon: const Icon(Icons.delete),
               label: const Text('Borrar plat'),
               onPressed: () {
-                //IMPLEMENTAR BORRAR
+                //IMPLEMENTAR APISERVICE.BORRAR
               },
             ),
           ),

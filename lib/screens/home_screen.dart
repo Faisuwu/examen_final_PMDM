@@ -11,7 +11,7 @@ class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
-
+//HomeScreen amb una llista de widgets "plat_nom", que mostra el nom del plat
 class _HomeScreenState extends State<HomeScreen> {
   final ApiService _api = ApiService();
   final StorageService _storage = StorageService();

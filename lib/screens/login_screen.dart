@@ -8,6 +8,7 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
+//LoginScreen per fer el login de l'aplicació
 class _LoginScreenState extends State<LoginScreen> {
   final _userCtrl = TextEditingController();
   final _passCtrl = TextEditingController();
@@ -17,6 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool guardarCreedencials = false;
 
 
+  //Una vegada li donam a login, validam i guardam les creedencials de haver-se indicat
   void _login() async {
     setState(() => _loading = true);
     final ok = await _auth.login(_userCtrl.text, _passCtrl.text);
@@ -31,6 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  //Textfields,Checkbox i boto de login del formulari de login
   @override
   Widget build(BuildContext c) => Scaffold(
     appBar: AppBar(title: const Text('Login')),
